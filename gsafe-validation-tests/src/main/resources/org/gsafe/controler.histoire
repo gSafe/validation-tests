@@ -1,0 +1,44 @@
+Narrative : Cette story a pour but de spécifier le comportement de la fonction de controle des objets numérique dans un coffre fort.
+Elle contrôle leur existence ainsi que leur non altération.
+
+
+Scénario: Contrôler un fichier existant
+
+Etant donné que Leon Martin a un coffre coffre_456 avec le conteneur documents_perso et le fichier test.pdf déposé le 12/10/2014 00:00
+Quand Leon Martin contrôle le document identifié 123 dans le coffre coffre_456
+Alors le coffre retourne un IDU
+Et un ID_CCFN égal à coffre_456
+Et un ID_UTI égal à Leon Martin
+Et une date et heure de fin de réalisation récente
+Et une date et heure de dépot égale à 12/10/2014 00:00
+Et une taille égale à la taille de test.pdf
+Et un algorithme d'empreinte égal à SHA256
+Et une empreinte égale à da39a3ee5e6b4bd3255bfef95601890afd879
+
+
+Scénario: Contrôler un fichier altéré
+
+Etant donné que Leon Martin a un coffre coffre_456 avec le conteneur documents_perso et le fichier test.pdf
+Quand Leon Martin contrôle le document altéré identifié 987 dans le coffre coffre_456
+Alors le coffre retourne un IDU
+Et un ID_CCFN égal à coffre_456
+Et un ID_UTI égal à Leon Martin
+Et une date et heure de fin de réalisation récente
+Et une date et heure de dépot égale à 12/10/2014 00:00
+Et une taille égale à la taille de test.pdf
+Et un algorithme d'empreinte égal à SHA256
+Et une empreinte différente de da39a3ee5e6b4bd3255bfef95601890afd879
+
+
+Scénario: Tentative de contrôle du fichier d'un autre utilisateur
+
+Etant donné que Leon Martin a un coffre coffre_456 avec le conteneur documents_perso et le fichier test.pdf
+Quand Bernard Minet contrôle le document identifié 123 dans le coffre coffre_456
+Alors l'accès est refusé
+
+
+Scénario: Tentative de contrôle d'un fichier dans un coffre inexistant
+
+Etant donné que Leon Martin a un coffre coffre_456 avec le conteneur documents_perso et le fichier test.pdf
+Quand Leon Martin contrôle le document identifié 123 dans le coffre coffre_inexistant
+Alors l'accès est refusé

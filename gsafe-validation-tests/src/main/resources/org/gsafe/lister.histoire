@@ -1,0 +1,39 @@
+Narrative: Cette story a pour but de spécifier le comportement de la fonction de listing des objets numériques d'un coffre fort.
+
+Scénario: Listing des objets numériques d'un coffre
+
+Etant donné que Leon Martin a un coffre coffre_456 avec le conteneur documents_perso comprenant 10 objets numériques
+Quand Leon Martin récupère la liste des objets numériques du coffre coffre_456
+Alors 10 identifiants sont présents dans la liste
+
+
+Scénario: Listing des objets numériques avec un identifiant
+
+Etant donné que Leon Martin a un coffre coffre_456 avec le conteneur documents_perso comprenant 10 objets numériques
+Quand Leon Martin récupère la liste des objets numériques identifiés 9 du coffre coffre_456
+Alors 1 identifiants sont présents dans la liste
+
+
+Scénario: Listing des objets numériques dans une plage de date de dépôt
+
+Etant donné que Leon Martin a un coffre coffre_456 avec le conteneur documents_perso comprenant 10 objets numériques
+Quand Leon Martin récupère la liste des objets numériques du coffre coffre_456 déposés entre le 01/01/2015 et le 02/01/2015
+Alors 10 identifiants sont présents dans la liste
+
+
+Scénario: Listing des objets numériques dans une plage d'identifiants
+
+Etant donné que Leon Martin a un coffre coffre_456 avec le conteneur documents_perso comprenant 10 objets numériques
+Quand Leon Martin récupère la liste des objets numériques du coffre coffre_456 identifiés entre 1 et 5
+Alors 5 identifiants sont présents dans la liste
+
+
+Scénario: Listing des objets numériques d'un coffre
+
+Etant donné que Leon Martin a un coffre coffre_456 avec le conteneur documents_perso comprenant 10 objets numériques
+Quand Leon Martin récupère la liste des objets numériques du coffre coffre_456
+Alors le coffre retourne une liste de 10 IDU
+Alors un ID_CCFN égal à coffre_456
+Et un ID_UTI égal à Leon Martin
+Et une date et heure de fin de réalisation récente
+Et un conteneur égal à documents_perso

@@ -1,0 +1,42 @@
+Narrative: Cette story a pour but de spécifier le comportement de le fonction de destruction d'un document dans un coffre fort.
+
+Scénario: Destruction d'un fichier
+
+Etant donné que Leon Martin a un coffre coffre_456 avec le conteneur documents_perso et le fichier test.pdf
+Quand Leon Martin détruit le document identifié 123 dans le coffre coffre_456
+Alors le document 123 n'est plus récupérable
+
+
+Scénario: Tentative de destruction du fichier d'un autre utilisateur
+
+Etant donné que Leon Martin a un coffre coffre_456 avec le conteneur documents_perso et le fichier test.pdf
+Quand Bernard Minet détruit le document identifié 123 dans le coffre coffre_456
+Alors la destruction est refusée
+
+
+Scénario: Destruction d'un fichier
+
+Etant donné que Leon Martin a un coffre coffre_456 avec le conteneur documents_perso et le fichier test.pdf
+Quand Leon Martin détruit le document identifié 123 dans le coffre coffre_456
+Alors le coffre retourne un IDU
+Et un ID_CCFN égal à coffre_456
+Et un ID_UTI égal à Leon Martin
+Et une date et heure de fin de réalisation récente
+Et une taille égale à la taille de test.pdf
+Et un algorithme d'empreinte égal à SHA256
+Et une empreinte égale à azrda39a3ee5e6b4bd3255bfeqf95601890afd879
+
+
+Scénario: Destruction d'un fichier non existant
+
+Etant donné que Leon Martin a un coffre coffre_456 avec le conteneur documents_perso et le fichier test.pdf
+Quand Leon Martin détruit le document identifié 124 dans le coffre coffre_456
+Alors la destruction est refusée
+
+
+Scénario: Destruction d'un fichier d'un coffre inexistant
+
+Etant donné que Leon Martin a un coffre coffre_456 avec le conteneur documents_perso et le fichier test.pdf
+Quand Leon Martin détruit le document identifié 124 dans le coffre coffre_inexistant
+Alors la destruction est refusée
+

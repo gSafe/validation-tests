@@ -1,0 +1,67 @@
+Narrative:
+Cette story a pour but de spécifier le comportement de le fonction de dépôt dans un coffre fort. Aussi bien le dépôt vérifié que le dépôt non vérifié.
+
+
+Scénario: Dépôt non vérifié avec récupération
+
+Etant donné que Leon Martin a un coffre coffre_456 avec le conteneur documents_perso
+Quand Leon Martin dépose le document test.pdf dans le conteneur documents_perso du coffre coffre_456
+Et Leon Martin récupère le document test.pdf depuis le conteneur documents_perso du coffre coffre_456
+Alors le fichier récupéré est le même que celui qui avait été déposé
+
+
+Scénario: Dépôt vérifié avec récupération
+
+Etant donné que Leon Martin a un coffre coffre_456 avec le conteneur documents_perso
+Quand Leon Martin dépose le document test.pdf avec l'empreinte SHA1 da39a3ee5e6b4bd3255bfef95601890afd879 dans le conteneur documents_perso du coffre coffre_456
+Et Leon Martin récupère le document test.pdf depuis le conteneur documents_perso du coffre coffre_456
+Alors le fichier récupéré est le même que celui qui avait été déposé
+
+
+Scénario: Dépôt vérifié avec récupération
+
+Etant donné que Leon Martin a un coffre coffre_456 avec le conteneur documents_perso
+Quand Leon Martin dépose le document test.pdf dans le conteneur documents_perso du coffre coffre_456
+Et Leon Martin récupère le document test.pdf depuis le conteneur documents_perso du coffre coffre_456
+Alors le coffre retourne un IDU
+Et un ID_CCFN égal à coffre_456
+Et un ID_UTI égal à Leon Martin
+Et une date et heure de fin de réalisation récente
+Et une taille égale à la taille de test.pdf
+Et un algorithme d'empreinte égal à SHA256
+Et une empreinte égale à azrda39a3ee5e6b4bd3255bfeqf95601890afd879
+
+
+Scénario: Tentative de dépôt avec mauvaise empreinte
+
+Etant donné que Leon Martin a un coffre coffre_456 avec le conteneur documents_perso
+Quand Leon Martin dépose le document test.pdf avec l'empreinte SHA1 abcd0123456789 dans le conteneur documents_perso du coffre coffre_456
+Alors le dépôt est refusé
+
+
+Scénario: Le dépôt d'un document vide dans un conteneur
+
+Etant donné que Leon Martin a un coffre coffre_456 avec le conteneur documents_perso
+Quand Leon Martin dépose un document vide dans le conteneur documents_perso du coffre coffre_456
+Alors le dépôt est refusé
+
+
+Scénario: Le dépôt d'un document avec refus d'accès
+
+Etant donné que Leon Martin a un coffre coffre_456 avec le conteneur documents_perso
+Quand Bernard Minet dépose le document test.pdf dans le conteneur documents_perso du coffre coffre_456
+Alors l'accès est refusé
+
+
+Scénario: Le dépôt d'un document dans un conteneur inexistant
+
+Etant donné que Leon Martin a un coffre coffre_456 avec le conteneur documents_perso
+Quand Bernard Minet dépose le document test.pdf dans le conteneur documents_inexistant du coffre coffre_456
+Alors le dépôt est refusé
+
+
+Scénario: Le dépôt d'un document dans un coffre inexistant
+
+Etant donné que Leon Martin a un coffre coffre_456 avec le conteneur documents_perso
+Quand Bernard Minet dépose le document test.pdf dans le conteneur documents_perso du coffre coffre_inexistant
+Alors le dépôt est refusé

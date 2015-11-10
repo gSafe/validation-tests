@@ -1,0 +1,45 @@
+Narrative: Cette story a pour but de spécifier le comportement de la fonction de lecture dans un coffre fort
+
+Scénario: Lecture d'un fichier
+
+Etant donné que Leon Martin a un coffre coffre_456 avec le conteneur documents_perso et le fichier test.pdf identifié 123
+Quand Leon Martin lit le document identifié 123 dans le conteneur documents_perso du coffre coffre_456
+Alors le fichier récupéré est le même que test.pdf
+
+
+Scénario: Tentative de lecture du fichier d'un autre utilisateur
+
+Etant donné que Leon Martin a un coffre coffre_456 avec le conteneur documents_perso et le fichier test.pdf identifié 123
+Quand Bernard Minet lit le document identifié 123 dans le conteneur documents_perso du coffre coffre_456
+Alors l'accès est refusé
+
+
+Scénario: Lecture d'un fichier
+
+Etant donné que Leon Martin a un coffre coffre_456 avec le conteneur documents_perso
+Quand Leon Martin lit le document identifié 123 dans le conteneur documents_perso du coffre coffre_456
+Alors le coffre retourne un IDU
+Et un ID_CCFN égal à coffre_456
+Et un ID_UTI égal à Leon Martin
+Et une date et heure de fin de réalisation récente
+
+
+Scénario: Lecture d'un fichier non existant
+
+Etant donné que Leon Martin a un coffre coffre_456 avec le conteneur documents_perso et le fichier test.pdf identifié 123
+Quand Leon Martin lit le document identifié 124 dans le conteneur documents_perso du coffre coffre_456
+Alors le document n'est pas trouvé
+
+
+Scénario: Lecture d'un fichier d'un coffre inexistant
+
+Etant donné que Leon Martin a un coffre coffre_456 avec le conteneur documents_perso et le fichier test.pdf identifié 123
+Quand Leon Martin lit le document identifié 123 dans le conteneur documents_perso du coffre coffre_inexistant
+Alors le document n'est pas trouvé
+
+
+Scénario: Lecture d'un conteneur inexistant
+
+Etant donné que Leon Martin a un coffre coffre_456 avec le conteneur documents_perso et le fichier test.pdf identifié 123
+Quand Leon Martin lit le document identifié 124 dans le conteneur documents_inexistant du coffre coffre_456
+Alors le document n'est pas trouvé

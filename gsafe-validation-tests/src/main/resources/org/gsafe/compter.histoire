@@ -1,0 +1,32 @@
+Narrative: Cette story a pour but de spécifier le comportement de la fonction "compter le nombre d'objets numériques d'un coffre fort".
+
+Scénario: Compter les objets numériques
+
+Etant donné que Leon Martin a un coffre coffre_456 avec le conteneur documents_perso comprenant 10 objets numériques
+Quand Leon Martin compte les objets numériques du coffre coffre_456
+Alors il y a 10 objets numériques correspondants
+
+
+Scénario: Compter les objets numériques dans une plage de date de dépôt
+
+Etant donné que Leon Martin a un coffre coffre_456 avec le conteneur documents_perso comprenant 10 objets numériques
+Quand Leon Martin compte les objets numériques du coffre coffre_456 déposés entre le 01/01/2015 et le 02/01/2015
+Alors il y a 10 objets numériques correspondants
+
+
+Scénario: Compter les objets numériques dans une plage d'identifiants
+
+Etant donné que Leon Martin a un coffre coffre_456 avec le conteneur documents_perso comprenant 10 objets numériques
+Quand Leon Martin compte les objets numériques du coffre coffre_456 possédant des identifiants compris entre 01 et 05
+Alors il y a 5 objets numériques correspondants
+
+
+Scénario: Compter les objets numériques
+
+Etant donné que Leon Martin a un coffre coffre_456 avec le conteneur documents_perso comprenant 10 objets numériques
+Quand Leon Martin compte les objets numériques du coffre coffre_456
+Alors le coffre retourne une liste de 10 IDU
+Et un ID_CCFN égal à coffre_456
+Et un ID_UTI égal à Leon Martin
+Et une date et heure de fin de réalisation récente
+Et un conteneur égal à documents_perso

@@ -1,0 +1,36 @@
+Narrative: Cette story a pour but de spécifier le comportement de la fonction de lecture du journal des opérations sur les objets numériques d'un coffre fort.
+
+
+Scénario: Lecture des informations du journal concernant un fichier existant
+
+Etant donné que Leon Martin a un coffre coffre_456 ayant le conteneur documents_perso et le fichier test.pdf sur lequel 3 opérations de lecture et 2 opérations de controle ont été effectuées
+Quand Leon Martin récupère les informations du journal concernant le document identifié 123 dans le coffre coffre_456
+Alors 5 opérations ont été effectuées sur le fichier
+
+
+Scénario: Lecture des informations entre deux dates
+
+Etant donné que Leon Martin a un coffre coffre_456 ayant le conteneur documents_perso et le fichier test.pdf sur lequel 2 opérations de lecture et 1 opérations de controle ont été effectuées
+Quand Leon Martin récupère les informations du journal concernant le coffre coffre_456 entre le 01/01/2015 et le 02/01/2015
+Alors 3 opérations ont été effectuées sur le fichier
+
+
+Scénario: Lecture des informations du journal entre deux id
+
+Etant donné que Leon Martin a un coffre coffre_456 ayant le conteneur documents_perso et le fichier test.pdf sur lequel 2 opérations de lecture et 1 opérations de controle ont été effectuées
+Quand Leon Martin récupère les informations du journal concernant le coffre coffre_456 pour les id entre 10 et 12
+Alors 3 opérations ont été effectuées sur le fichier
+
+Scénario: Lecture des informations du journal concernant un fichier existant
+
+Etant donné que Leon Martin a un coffre coffre_456 ayant le conteneur documents_perso et le fichier test.pdf sur lequel 3 opérations de lecture et 2 opérations de controle ont été effectuées
+Quand Leon Martin récupère les informations du journal concernant le document identifié 123 dans le coffre coffre_456
+Alors le coffre retourne un ID_CCFN égal à coffre_456
+Et un ID_UTI égal à Leon Martin
+Et un IDU pour chaque opération
+Et un ID_CCFN égal à coffre_456 pour chaque opération
+Et un ID_UTI pour chaque opération
+Et une date et heure de fin de réalisation récente pour chaque opération
+Et une taille pour chaque opération
+Et un algorithme d'empreinte pour chaque opération
+Et une empreinte pour chaque opération
